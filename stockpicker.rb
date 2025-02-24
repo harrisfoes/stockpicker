@@ -11,16 +11,13 @@ def stockpicker(price_per_day)
   cheapest_day = 0
   
   price_per_day.each_with_index do | price, day|
-    p "Price : #{price} Day: #{day}"
 
     if price < min_price
-      p "Found a new min price: #{min_price}"
       min_price = price
       cheapest_day = day
     end
 
     if price - min_price > max_profit
-      p "Found a new max profit: #{max_profit}"
       max_profit = price - min_price
       #only record cheapest_day if profit is max
       best_day = [cheapest_day, day]
@@ -28,7 +25,6 @@ def stockpicker(price_per_day)
 
   end
   
-  p "Profit: #{max_profit}"
   best_day
 
 end
